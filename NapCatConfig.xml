@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context1">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/world" userId="root"
+			password="iamxjp123P" />
+		<!-- 生成模型的包名和位置 -->
+		<javaModelGenerator targetPackage="test.domain"
+			targetProject="NapCat">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 生成映射文件的包名和位置 -->
+		<sqlMapGenerator targetPackage="test.mapping"
+			targetProject="NapCat">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 生成DAO的包名和位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="test.dao" targetProject="NapCat">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- 要生成的那些表(更改tableName 和domainObjectName 就可以了) -->
+		<table schema="world" tableName="CITY" domainObjectName="city"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+			<columnOverride column="name" property="name" />
+			<columnOverride column="CountryCode" property="CountryCode" />
+			<columnOverride column="District" property="District" />
+			<columnOverride column="Population" property="Population" />
+		</table>
+		<table schema="world" tableName="COUNTRY" domainObjectName="country"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+			<columnOverride column="Code" property="Code" />
+			<columnOverride column="Continent" property="Continent" />
+			<columnOverride column="Region" property="Region" />
+			<columnOverride column="SurfaceArea" property="SurfaceArea" />
+			<columnOverride column="IndepYear" property="IndepYear" />
+			<columnOverride column="Population" property="Population" />
+			<columnOverride column="LifeExpectancy" property="LifeExpectancy" />
+			<columnOverride column="GNP" property="GNP" />
+			<columnOverride column="GNPOld" property="GNPOld" />
+		</table>
+	</context>
+</generatorConfiguration>
